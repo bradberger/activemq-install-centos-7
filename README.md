@@ -1,5 +1,8 @@
 ## Overview
 
+Steps 1 and 2 are in the `install-activemq.sh` file. Just run that if you're not interested 
+in the process. You'll also need to copy the files in the repository to the server, as well.
+
 1. Install Java
 2. Download and install ActiveMQ
 
