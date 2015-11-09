@@ -116,3 +116,11 @@ esac
 
 exit $?
 ```
+
+After that's all done, you'll (probably) want to set up ActiveMQ to start 
+after reboots, so to do that, it's as simple as:
+
+```bash
+sudo chkconfig --add activemq
+sudo chkconfig activemq on
+```
