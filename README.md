@@ -124,3 +124,5 @@ after reboots, so to do that, it's as simple as:
 sudo chkconfig --add activemq
 sudo chkconfig activemq on
 ```
+
+The configuration files are now in `/opt/activemq/conf`.
