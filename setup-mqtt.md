@@ -20,3 +20,5 @@ verifying clients (and it doesn't by default) then remove the `trustStore=` attr
 
 </broker>
 ```
+
+For more detailed information, see [the ActiveMQ docs for MQTT](http://activemq.apache.org/mqtt.html)
