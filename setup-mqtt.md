@@ -1,6 +1,7 @@
 Setting up MQTT is quite easy, just edit the `/opt/activemq/conf/activemq.xml` file and make sure 
-it has MQTT as a transport connector for the broker. Notice in the example below SSL is enabled. 
-If you're not verifying clients (and it doesn't by default) then remove the `trustStore=` attributes.
+it has MQTT as a transport connector for the broker. Notice in the example below SSL is enabled. If
+it wasn't, you'd set the `transportConnector` `uri` attribute without the `+ssl` part. If you're not 
+verifying clients (and it doesn't by default) then remove the `trustStore=` attributes.
 
 ```xml
 <broker>
