@@ -60,62 +60,7 @@ chmod +x /etc/profile.d/activemq.sh
 ```
 
 Now create the init script to control starting/stopping the ActiveMQ as a daemon.
-The file name is `/etc/init.d/activemq`
-
-```bash
-#!/bin/bash
-#
-# activemq	 Starts ActiveMQ.
-#
-# chkconfig: 345 88 12
-# description: ActiveMQ is a JMS Messaging Queue Server.
-### BEGIN INIT INFO
-# Provides: $activemq
-### END INIT INFO
-
-# Source function library.
-. /etc/init.d/functions
-
-RETVAL=0
-
-umask 077
-
-start() {
-       echo -n $"Starting ActiveMQ: "
-       daemon /opt/activemq/bin/activemq start
-       echo
-       return $RETVAL
-}
-stop() {
-       echo -n $"Shutting down ActiveMQ: "
-       daemon su -c /opt/activemq/bin/activemq stop
-       echo
-       return $RETVAL
-}
-restart() {
-       stop
-       start
-}
-case "$1" in
-start)
-       start
-       ;;
-stop)
-       stop
-       ;;
-status)
-       /opt/activemq/bin/activemq status
-       ;;
-restart|reload)
-       restart
-       ;;
-*)
-       echo $"Usage: $0 {start|stop|restart}"
-       exit 1
-esac
-
-exit $?
-```
+The file name is [/etc/init.d/activemq](etc/init.d/activemq)
 
 After that's all done, you'll (probably) want to set up ActiveMQ to start 
 after reboots, so to do that, it's as simple as:
