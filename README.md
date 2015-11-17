@@ -8,6 +8,8 @@ in the process. You'll also need to copy the files in the repository to the serv
 
 ## Install Java
 
+### OpenJDK
+
 ActiveMQ requires Java, so the first step is to install Java. The OpenJDK should work
 fine, and it simplifies installation:
 
@@ -19,6 +21,32 @@ You can verify it installed correctly with:
 
 ```bash
 java -version
+```
+
+### Oracle JDK
+
+Alternatively, you can install the Oracle JDK. Pick the appropriate RPM file from
+the [Java download page](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html).
+At time of writing, the latest version was `http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jre-8u66-linux-x64.rpm`. To download and install
+it, run the following command, replacing the RPM file name with the latest version:
+
+```bash
+cd ~
+wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie"  "http://download.oracle.com/otn-pub/java/jdk/8u66-b17/jre-8u66-linux-x64.rpm"
+sudo yum localinstall jre-8u66-linux-x64.rpm
+```
+
+Verify it's install with:
+
+```bash
+java -version
+```
+
+If you've installed a different version of Java previously, and want to update the 
+default version, use the command:
+
+```bash
+sudo alternatives --config java
 ```
 
 ## Install ActiveMQ
